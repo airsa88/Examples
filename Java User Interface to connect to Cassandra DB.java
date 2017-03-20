@@ -1,5 +1,5 @@
 
-//Java code to connect to Cassandra Database and fetch the query results.
+//Java GUI code to connect to Cassandra Database and fetch the query results.
 
 package cassandra.cluster;
 //import java.awt.*;
