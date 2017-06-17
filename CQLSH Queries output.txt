@@ -1,0 +1,149 @@
+iccassandra@cqlsh:crimedata> select "Location_Block" from crimedata where "Hour" >= 0 and "Hour" <=3 and "Text_General_Code" = 'Thefts' LIMIT 20 ALLOW FILTERING;
+Location_Block
+----------------------------------
+             1400 BLOCK N 16TH ST
+      600 BLOCK E WESTMORELAND ST
+            7100 BLOCK MARSDEN ST
+     1500 BLOCK E MOYAMENSING AVE
+      4600 BLOCK E ROOSEVELT BLVD
+           S 16TH ST  / TASKER ST
+           5700 BLOCK WOODLAND AV
+            1500 BLOCK PACKER AVE
+          5800 BLOCK WOODLAND AVE
+           200 BLOCK W LEHIGH AVE
+          6800 BLOCK ESSINGTON AV
+ GERMANTOWN AV  / E WASHINGTON LA
+         1300 BLOCK CHANCELLOR ST
+           1900 BLOCK CHESTNUT ST
+       2200 BLOCK W ALLEGHENY AVE
+      1300 BLOCK CECIL B MOORE AV
+          8600 BLOCK GILLESPIE ST
+      3100 BLOCK CECIL B MOORE AV
+               400 BLOCK S 3RD ST
+           800 BLOCK PERKIOMEN ST
+
+(20 rows)
+
+Tracing session: 50e9cda0-ecbe-11e6-aadb-f5d073a38d1c
+
+iccassandra@cqlsh:crimedata> SELECT duration,parameters FROM system_traces.sessions WHERE session_id = 50e9cda0-ecbe-11e6-aadb-f5d073a38d1c;
+
+ duration | parameters
+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    17518 | {'consistency_level': 'ONE', 'page_size': '100', 'query': 'select "Location_Block" from crimedata where "Hour" >= 0 and "Hour" <=3 and "Text_General_Code" = ''Thefts'' LIMIT 20 ALLOW FILTERING;', 'serial_consistency_level': 'SERIAL'}
+
+(1 rows)
+=================================================================================================================
+iccassandra@cqlsh:crimedata> select "Dc_Key","Text_General_Code" from crimedata where "UCR_General" = 1500 LIMIT 20 ALLOW FILTERING;
+
+ Dc_Key       | Text_General_Code
+--------------+-------------------
+ 201122065885 | Weapon Violations
+ 201339010166 | Weapon Violations
+ 201524083489 | Weapon Violations
+ 201208005589 | Weapon Violations
+ 201025033641 | Weapon Violations
+ 201201053220 | Weapon Violations
+ 201017039637 | Weapon Violations
+ 201024105476 | Weapon Violations
+ 201319004420 | Weapon Violations
+ 201035014632 | Weapon Violations
+ 201235043407 | Weapon Violations
+ 201525071086 | Weapon Violations
+ 201335031594 | Weapon Violations
+ 201012011215 | Weapon Violations
+ 201318028056 | Weapon Violations
+ 201102067660 | Weapon Violations
+ 200939036403 | Weapon Violations
+ 200922031322 | Weapon Violations
+ 201525051182 | Weapon Violations
+ 201015073290 | Weapon Violations
+
+(20 rows)
+
+Tracing session: 804425f0-ecbe-11e6-aadb-f5d073a38d1c
+
+iccassandra@cqlsh:crimedata> SELECT duration,parameters FROM system_traces.sessions WHERE session_id = 804425f0-ecbe-11e6-aadb-f5d073a38d1c;
+
+ duration | parameters
+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    13446 | {'consistency_level': 'ONE', 'page_size': '100', 'query': 'select "Dc_Key","Text_General_Code" from crimedata where "UCR_General" = 1500 LIMIT 20 ALLOW FILTERING;', 'serial_consistency_level': 'SERIAL'}
+
+(1 rows)
+
+=================================================================================================================
+iccassandra@cqlsh:crimedata> select "Dispatch_Date" from crimedata where "Location_Block" = '5500 BLOCK N 5TH ST' LIMIT 20 ALLOW FILTERING;
+
+ Dispatch_Date
+---------------
+    2011-01-24
+    2010-09-27
+    2010-03-20
+    2009-09-09
+    2009-02-03
+    2011-04-03
+    2011-11-27
+    2012-11-29
+    2011-03-06
+    2010-04-21
+    2010-08-14
+    2010-10-01
+    2011-05-28
+    2009-06-29
+    2011-07-10
+    2012-05-22
+    2010-10-23
+    2010-10-02
+    2010-01-09
+    2010-05-02
+
+(20 rows)
+
+Tracing session: b124f730-ecbe-11e6-aadb-f5d073a38d1c
+
+iccassandra@cqlsh:crimedata> SELECT duration,parameters FROM system_traces.sessions WHERE session_id = b124f730-ecbe-11e6-aadb-f5d073a38d1c;
+
+ duration | parameters
+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  1003845 | {'consistency_level': 'ONE', 'page_size': '100', 'query': 'select "Dispatch_Date" from crimedata where "Location_Block" = ''5500 BLOCK N 5TH ST'' LIMIT 20 ALLOW FILTERING;', 'serial_consistency_level': 'SERIAL'}
+
+(1 rows)
+=================================================================================================================
+
+iccassandra@cqlsh:crimedata> select "Dispatch_Time" from crimedata where "Text_General_Code" = 'Weapon Violations' LIMIT 20 ALLOW FILTERING;
+
+ Dispatch_Time
+--------------------
+ 17:51:00.000000000
+ 22:51:00.000000000
+ 21:22:00.000000000
+ 13:59:00.000000000
+ 10:24:00.000000000
+ 00:49:00.000000000
+ 21:06:00.000000000
+ 10:22:00.000000000
+ 11:58:00.000000000
+ 21:03:00.000000000
+ 19:38:00.000000000
+ 17:46:00.000000000
+ 17:04:00.000000000
+ 19:57:00.000000000
+ 16:45:00.000000000
+ 07:43:00.000000000
+ 18:59:00.000000000
+ 22:20:00.000000000
+ 19:55:00.000000000
+ 20:43:00.000000000
+
+(20 rows)
+
+Tracing session: d496e8e0-ecbe-11e6-aadb-f5d073a38d1c
+
+iccassandra@cqlsh:crimedata> SELECT duration,parameters FROM system_traces.sessions WHERE session_id = d496e8e0-ecbe-11e6-aadb-f5d073a38d1c;
+
+ duration | parameters
+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    20852 | {'consistency_level': 'ONE', 'page_size': '100', 'query': 'select "Dispatch_Time" from crimedata where "Text_General_Code" = ''Weapon Violations'' LIMIT 20 ALLOW FILTERING;', 'serial_consistency_level': 'SERIAL'}
+
+(1 rows)
+=======================================================================================================
