@@ -33,6 +33,8 @@ public class Question3 {
         
         System.out.println(map.get(emp1).getName() + " " + map.get(emp1).getid());        
         //System.out.println(map.get(new Employee("krishna", 1002)));
+	
+	//Alternative way to display the content - using iterator
         
         Iterator iterator = map.entrySet().iterator();
 
